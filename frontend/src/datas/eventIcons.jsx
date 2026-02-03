@@ -15,10 +15,14 @@ export const EventIcons = {
 
 
 export const CategoriesLinks = [
-  { _id: 1, name: "Music", icon: <Music/>  , to:""},
-  { _id: 2, name: "Arts", icon: <Gamepad2/>  , to:""},
-  { _id: 3, name: "Business", icon: <Brush/>  , to:""},
-  { _id: 4, name: "Food & Drink", icon: <Medal/>  , to:""},
-  { _id: 5, name: "Sports", icon: <Handshake/>  , to:""},
-  { _id: 6, name: "Tech", icon: <Cpu/>  , to:""},
+  { _id: 1, name: "Music", icon: Music },
+  { _id: 2, name: "Gaming", icon: Gamepad2 },
+  { _id: 3, name: "Art", icon: Brush },
+  { _id: 4, name: "Sports", icon: Medal },
+  { _id: 5, name: "Business", icon: Handshake },
+  { _id: 6, name: "Education", icon: Book },
+  { _id: 7, name: "Tech", icon: Cpu },
+  { _id: 8, name: "Food", icon: ChefHat },
+  { _id: 9, name: "Health", icon: HeartPulse },
+  { _id: 10, name: "Other", icon: Earth }
 ];

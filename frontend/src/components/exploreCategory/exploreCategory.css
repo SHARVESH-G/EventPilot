@@ -3,8 +3,6 @@
   background: #ffffff;
 }
 
-/* Header */
-
 .explore-header {
   display: flex;
   justify-content: space-between;
@@ -28,9 +26,8 @@
   color: var(--primary);
   font-weight: 600;
   cursor: pointer;
+  user-select: none;
 }
-
-/* Grid */
 
 .category-grid {
   display: grid;
@@ -38,7 +35,6 @@
   gap: 24px;
 }
 
-/* Card */
 
 .category-card {
   background: var(--bg);
@@ -62,7 +58,7 @@
   background: var(--bgPrimary);
 }
 
-/* Icon */
+
 
 .icon-wrapper {
   width: 58px;
