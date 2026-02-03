@@ -1,6 +1,7 @@
 import React from "react";
 import EventCard from "../../components/eventCard/eventCard";
 import HowItWorks from "../../components/howItWorks/howItWorks";
+import HeroSection from "../../components/heroSection/heroSection";
 
 const Home = () => {
   const event = {
@@ -17,7 +18,7 @@ const Home = () => {
   };
   return (
     <div>
-
+      <HeroSection/>
       <EventCard event={event} />
       <HowItWorks />
     </div>

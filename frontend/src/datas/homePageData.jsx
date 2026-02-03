@@ -29,5 +29,13 @@ const HowItWorksTitle = `How ${appName} Works`;
 
 const HowItWorksSubtitle = "Simple, seamless, and secure. We make finding and booking your next adventure effortless.";
 
+const HeroSection = {
+  tag: "The #1 Platform for Live Experiences",
+  titleTop: "Discover Events",
+  titleHighlight: "That Move You",
+  desc:
+    "From underground music gigs to tech conferences, find the perfect experience to create unforgettable memories.",
+};
 
-export {HowItWorksSteps, HowItWorksTitle, HowItWorksSubtitle};
+
+export {HowItWorksSteps, HowItWorksTitle, HowItWorksSubtitle , HeroSection};
