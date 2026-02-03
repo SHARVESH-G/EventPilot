@@ -32,7 +32,7 @@ const EventCard = ({ event }) => {
           <span>+{event.participants.length} Going</span>
         </div>
 
-        <div className="event-price">₹{event.price}</div>
+        <div className="event-price">{event.price == 0 ? <span style={{color:'green'}}>Free</span> : `₹${event.price}`}</div>
       </div>
     </div>
   );

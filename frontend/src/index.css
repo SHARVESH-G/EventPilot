@@ -7,6 +7,9 @@
   --text-muted: #64748b;
   --bg: #ffffff;
   --radius: 12px;
+  --bgPrimary:rgba(0, 0, 255, 0.08);
+  --border:2px solid rgba(91, 92, 246, 0.2);
+  --boxShodow:0 6px 18px rgba(91, 92, 246, 0.15);
 }
 
 

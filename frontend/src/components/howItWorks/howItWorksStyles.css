@@ -1,0 +1,102 @@
+/* Section */
+.hiw {
+  background: #f8fafc;
+  padding: 70px 20px;
+}
+
+/* Container */
+.hiw-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Heading */
+.hiw-title {
+  font-size: 2rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.hiw-sub {
+  margin-top: 10px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* Steps Layout */
+.hiw-steps {
+  margin-top: 55px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.hiw-card {
+  padding: 20px;
+}
+
+/* Circle Icon */
+.hiw-icon {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  background: var(--bgPrimary);
+  border: var(--border);
+  box-shadow: var(--boxShodow);
+}
+
+/* Number */
+.hiw-number {
+  display: block;
+  margin-top: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.hiw-card h3 {
+  margin-top: 6px;
+  color: var(--text-dark);
+}
+
+.hiw-card p {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ✅ Tablet */
+@media (max-width: 900px) {
+  .hiw-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 600px) {
+  .hiw {
+    padding: 50px 15px;
+  }
+
+  .hiw-title {
+    font-size: 1.6rem;
+  }
+
+  .hiw-steps {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hiw-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
