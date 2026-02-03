@@ -1,4 +1,5 @@
 export const NavBarLinks = [
+    {_id:0 , name:"Home" , to:""},
     {_id: 1, name: "Discover" , to: "discover"},
     {_id: 2, name: "Categories" , to: "categories"},
     {_id: 3, name: "Organizers" , to: "organizers"},

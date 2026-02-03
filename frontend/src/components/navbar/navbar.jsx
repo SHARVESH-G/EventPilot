@@ -19,7 +19,7 @@ const NavBar = () => {
       </div>
 
       <div className={`nav-center ${open ? "open" : ""}`}>
-        {NavBarLinks.map((ele) => (
+        {NavBarLinks.slice(1).map((ele) => (
           <Link key={ele._id} to={`/${ele.to}`} className="nav-link">{ele.name}</Link>
         ))}
       </div>
