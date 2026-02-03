@@ -1,4 +1,3 @@
-// EventCard.jsx
 import { EventIcons } from "../../datas/eventIcons";
 import "./eventCardStyle.css";
 
@@ -7,8 +6,9 @@ const EventCard = ({ event }) => {
     <div className="event-card">
       <div className="event-image">
         <img src={event.image} alt={event.title} />
+
         <span className="event-badge">
-          {EventIcons[event.category.toLowerCase()]|| EventIcons['other']}
+          {EventIcons[event.category.toLowerCase()] || EventIcons["other"]}
           <span className="badge-text">{event.category}</span>
         </span>
       </div>
@@ -28,14 +28,25 @@ const EventCard = ({ event }) => {
 
       <div className="event-footer">
         <div className="event-participants">
-          {event.numberOfSeats == 0 ? (<span  style={{color:"red"}}>NO SEATS AVAILABLE</span>) : (<span style={{color:"var(--primary)"}}>{event.numberOfSeats} SEATS LEFT</span>)}
+          {event.numberOfSeats === 0 ? (
+            <span style={{ color: "red" }}>NO SEATS AVAILABLE</span>
+          ) : (
+            <span style={{ color: "var(--primary)" }}>
+              {event.numberOfSeats} SEATS LEFT
+            </span>
+          )}
         </div>
 
-        <div className="event-price">{event.price == 0 ? <span style={{color:'green'}}>Free</span> : `₹${event.price}`}</div>
+        <div className="event-price">
+          {event.price === 0 ? (
+            <span style={{ color: "green" }}>Free</span>
+          ) : (
+            `₹${event.price}`
+          )}
+        </div>
       </div>
     </div>
   );
-}
-
+};
 
 export default EventCard;

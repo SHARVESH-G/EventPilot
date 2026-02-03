@@ -1,0 +1,104 @@
+/* Section */
+.trending {
+  width: 100%;
+  max-width: 1250px;
+  margin: 80px auto;
+  padding: 0 16px; /* ✅ proper spacing */
+  box-sizing: border-box;
+}
+
+/* Header */
+.trending-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.trending-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.trending-header p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* Toggle */
+.toggle {
+  background: #f8fafc;
+  padding: 6px;
+  border-radius: 999px;
+  display: flex;
+  gap: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.toggle button {
+  border: none;
+  background: transparent;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.toggle button:hover {
+  background: #eef2ff;
+  color: var(--primary);
+}
+
+.toggle button.active {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  justify-items: center; /* ⭐ centers cards */
+}
+
+/* Make cards consistent */
+.events-grid > * {
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .trending-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .trending {
+    margin: 60px auto;
+  }
+
+  .trending-header h2 {
+    font-size: 24px;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    justify-items: center; /* ⭐ keeps perfect center */
+  }
+}
