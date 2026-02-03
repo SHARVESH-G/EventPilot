@@ -7,10 +7,12 @@
   --text-muted: #64748b;
   --bg: #ffffff;
   --radius: 12px;
-  --bgPrimary:rgba(0, 0, 255, 0.08);
-  --border:2px solid rgba(91, 92, 246, 0.2);
-  --boxShodow:0 6px 18px rgba(91, 92, 246, 0.15);
+
+  --bgPrimary: color-mix(in srgb, var(--primary) 10%, transparent);
+  --border: 2px solid color-mix(in srgb, var(--primary) 30%, transparent);
+  --boxShadow: 0 10px 30px color-mix(in srgb, var(--primary) 18%, transparent);
 }
+
 
 
 body {
