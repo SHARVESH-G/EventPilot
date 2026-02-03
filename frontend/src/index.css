@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+
+:root {
+  --primary: #5b5cf6;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --bg: #ffffff;
+  --radius: 12px;
+}
+
+
+body {
+  font-family: var(--font-outfit);
+}
