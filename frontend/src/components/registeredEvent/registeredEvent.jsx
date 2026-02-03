@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./registeredEvent.css";
+import {BadgeIndianRupee, Hourglass, Target} from 'lucide-react'
+
 
 const RegisteredEventCard = ({ event }) => {
 
@@ -43,17 +45,17 @@ const RegisteredEventCard = ({ event }) => {
           <div className="ticket-meta">
 
             <span className="meta-pill price">
-              💰 {event.price === 0 ? "Free" : `₹${event.price}`}
+              <BadgeIndianRupee size={18} /> {event.price === 0 ? "Free" : `₹${event.price}`}
             </span>
 
             <span className={`meta-pill price ${seatsLeft < 20 ? "low" : ""}`}>
-              🎯 {seatsLeft} seats left
+              <Target size={18}/> {seatsLeft} seats left
             </span>
 
           </div>
 
           <div className="ticket-countdown">
-            ⏳ Starts in <strong>{timeLeft}</strong>
+            <Hourglass size={18}/> Starts in <strong>{timeLeft}</strong>
           </div>
         </div>
 

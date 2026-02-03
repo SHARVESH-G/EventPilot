@@ -7,8 +7,9 @@ import Home from "./pages/home/home";
 import AboutUs from "./pages/aboutUs/aboutUs";
 import Footer from "./components/footer/footer";
 import CreateMyEvent from "./pages/createMyEvent/createMyEvent";
-import RegisteredEventCard from "./components/registeredEvent/registeredEvent";
 import RegisteredEventPage from "./pages/registeredEvent/registeredEventPage";
+import UserCreatedEventCardPage from "./pages/userCreatedEvent/userCreatedEventPage";
+import EventDetailsPage from "./pages/eventDetailPage/eventDetailPage";
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
         <Route path="/aboutus" element={<AboutUs/>} />
         <Route path="/createnewevent" element={<CreateMyEvent/>}/>
         <Route path="/registeredevents" element={<RegisteredEventPage/>}/>
+        <Route path="/myevents" element={<UserCreatedEventCardPage/>}/>
+        <Route path="/event/:id" element={<EventDetailsPage />} />
       </Routes>
       <Footer/>
     </BrowserRouter>

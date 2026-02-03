@@ -1,0 +1,17 @@
+.created-events-page {
+  padding: 40px 6%;
+}
+
+.created-events-page h2 {
+  margin-bottom: 24px;
+  color: var(--text-dark);
+}
+
+.created-events-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.no-events {
+  color: var(--text-muted);
+}

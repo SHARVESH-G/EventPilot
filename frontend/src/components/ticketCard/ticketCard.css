@@ -1,0 +1,30 @@
+.ticket-box{
+  background:linear-gradient(135deg,var(--primary),#7c3aed);
+  color:white;
+  padding:24px;
+  border-radius:18px;
+  margin-top:24px;
+}
+
+.ticket-header{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.ticket-number{
+  font-size:32px;
+  font-weight:800;
+  margin:12px 0;
+}
+
+.ticket-event h2{
+  margin-bottom:6px;
+}
+
+.ticket-event p{
+  display:flex;
+  gap:6px;
+  align-items:center;
+  opacity:.9;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { events } from "../../datas/AAAtemp";
 import RegisteredEventCard from "../../components/registeredEvent/registeredEvent";
 import "./registeredEventPage.css";
+import {Link} from 'react-router-dom'
 
 const RegisteredEventPage = () => {
 
@@ -17,7 +18,7 @@ const RegisteredEventPage = () => {
       <div className="registered-events-grid">
         {registeredEvents.length > 0 ? (
           registeredEvents.map((event) => (
-            <RegisteredEventCard key={event.id} event={event} />
+            <Link  key={event.id} to={`/event/${event.id}`} style={{textDecoration:'none'}}><RegisteredEventCard event={event} /></Link>
           ))
         ) : (
           <p className="no-events">You have not registered for any events yet.</p>
