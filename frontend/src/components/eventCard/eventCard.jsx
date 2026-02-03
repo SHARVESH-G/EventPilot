@@ -1,5 +1,5 @@
 // EventCard.jsx
-import "./eventCardStyles.css";
+import "./eventCardStyle.css";
 
 const EventCard = ({ event }) => {
   return (
@@ -32,7 +32,7 @@ const EventCard = ({ event }) => {
           <span>+{event.participants.length} Going</span>
         </div>
 
-        <div className="event-price">${event.price}</div>
+        <div className="event-price">₹{event.price}</div>
       </div>
     </div>
   );
