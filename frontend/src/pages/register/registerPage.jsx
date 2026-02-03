@@ -6,7 +6,7 @@ import { CircleDot } from "lucide-react";
 import { statusOptinos } from "../../datas/loginFormData";
 import { PrimaryButton } from "../../components/uis/button/buttons";
 
-export default function RegisterPage() {
+const RegisterPage=()=>{
   const appName = import.meta.env.VITE_APP_NAME;
   const [password, setPassword] = useState("");
 
@@ -105,3 +105,4 @@ export default function RegisterPage() {
     </div>
   );
 }
+export default RegisterPage;

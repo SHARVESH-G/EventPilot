@@ -6,7 +6,7 @@ import "./navbar.css";
 import { MutedButton, PrimaryButton } from "../uis/button/buttons";
 import { NavBarLinks } from "../../datas/uiData";
 
-export default function Navbar() {
+const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   const appName = import.meta.env.VITE_APP_NAME
@@ -39,3 +39,6 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
+export default NavBar;

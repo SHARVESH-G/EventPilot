@@ -2,7 +2,9 @@ import { CircleDot } from "lucide-react";
 import { PrimaryButton } from "../../components/uis/button/buttons";
 import "./loginPageStyles.css";
 import {Link} from 'react-router-dom';
-export default function LoginPage() {
+
+
+const LoginPage=()=>{
   const appName = import.meta.env.VITE_APP_NAME
 
   return (
@@ -35,3 +37,6 @@ export default function LoginPage() {
     </div>
   );
 }
+
+
+export default LoginPage;
