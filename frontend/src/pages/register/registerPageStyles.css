@@ -13,7 +13,7 @@
 /* Card */
 .register-card {
   width: 100%;
-  max-width: 460px;
+  max-width: 520px;
   background: var(--bg);
   border-radius: var(--radius);
   padding: 30px;
@@ -26,13 +26,9 @@
   margin-bottom: 26px;
 }
 
-.logo-dot {
-  width: 14px;
-  height: 14px;
-  background: var(--primary);
-  border-radius: 50%;
-  display: inline-block;
-  margin-bottom: 12px;
+.logo-icon {
+  color: var(--primary);
+  margin-bottom: 8px;
 }
 
 .register-header h2 {
@@ -55,6 +51,14 @@
   gap: 16px;
 }
 
+/* Two-column rows */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Input group */
 .input-group {
   display: flex;
   flex-direction: column;
@@ -67,59 +71,6 @@
   color: var(--text-dark);
 }
 
-.input-group input,
-.input-group select {
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  font-size: 14px;
-  outline: none;
-}
-
-.input-group input:focus,
-.input-group select:focus {
-  border-color: var(--primary);
-}
-
-/* Password hints */
-.password-hints {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 4px;
-}
-
-.password-hints span {
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: #eef2ff;
-  color: var(--primary);
-}
-
-/* Button */
-.register-btn {
-  margin-top: 10px;
-  padding: 12px;
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.register-btn:hover {
-  opacity: 0.95;
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .register-card {
-    padding: 24px;
-  }
-}
 .input-group input,
 .input-group select {
   padding: 12px 14px;
@@ -144,23 +95,18 @@
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
-
-.login-text {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-  color: var(--text-muted);
+/* Password hints */
+.password-hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
 }
 
-.login-text span {
-  color: var(--primary);
-  font-weight: 600;
-  cursor: pointer;
-}
-
-
-/* password hint states */
 .password-hints span {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
   background: #f4c9c976;
   color: #ff000d;
 }
@@ -168,4 +114,30 @@
 .password-hints span.valid {
   background: #ecfdf5;
   color: #059669;
+}
+
+/* Footer */
+.login-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.signup-link {
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .register-card {
+    padding: 24px;
+  }
 }

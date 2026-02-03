@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./registerPageStyles.css";
+import { CircleDot } from "lucide-react";
 import { statusOptinos } from "../../datas/loginFormData";
 import { PrimaryButton } from "../../components/uis/button/buttons";
 
@@ -21,20 +22,22 @@ export default function RegisterPage() {
     <div className="register-page">
       <div className="register-card">
         <div className="register-header">
-          <span className="logo-dot"></span>
+          <CircleDot size={18} strokeWidth={3} className="logo-icon" />
           <h2>Create account</h2>
           <p>Join {appName}</p>
         </div>
 
         <form className="register-form">
-          <div className="input-group">
-            <label>Name</label>
-            <input type="text" placeholder="Your name" />
-          </div>
+          <div className="form-row">
+            <div className="input-group">
+              <label>Name</label>
+              <input type="text" placeholder="Your name" />
+            </div>
 
-          <div className="input-group">
-            <label>Email</label>
-            <input type="email" placeholder="you@example.com" />
+            <div className="input-group">
+              <label>Email</label>
+              <input type="email" placeholder="you@example.com" />
+            </div>
           </div>
 
           <div className="input-group">
@@ -56,30 +59,37 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          <div className="input-group">
-            <label>Confirm Password</label>
-            <input type="password" placeholder="••••••••" />
+          <div className="form-row">
+            <div className="input-group">
+              <label>Confirm Password</label>
+              <input type="password" placeholder="••••••••" />
+            </div>
+
+            <div className="input-group">
+              <label>Age</label>
+              <input type="number" placeholder="18" />
+            </div>
           </div>
 
-          <div className="input-group">
-            <label>Age</label>
-            <input type="number" placeholder="18" />
-          </div>
+          <div className="form-row">
+            <div className="input-group">
+              <label>Status</label>
+              <select>
+                {statusOptinos.map((option) => (
+                  <option key={option._id} value={option.label}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          <div className="input-group">
-            <label>Status</label>
-            <select>
-              {statusOptinos.map((option) => (
-                <option key={option._id} value={option.label}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="input-group">
-            <label>Organisation Name</label>
-            <input type="text" placeholder="School / Company / College" />
+            <div className="input-group">
+              <label>Organisation Name</label>
+              <input
+                type="text"
+                placeholder="School / Company / College"
+              />
+            </div>
           </div>
 
           <PrimaryButton text="Sign up" type="submit" />

@@ -1,3 +1,4 @@
+import { CircleDot } from "lucide-react";
 import { PrimaryButton } from "../../components/uis/button/buttons";
 import "./loginPageStyles.css";
 import {Link} from 'react-router-dom';
@@ -8,7 +9,7 @@ export default function LoginPage() {
     <div className="login-page">
       <div className="login-card">
         <div className="login-header">
-          <span className="logo-dot"></span>
+          <CircleDot size={18} strokeWidth={3} style={{color:"var(--primary)"}} />
           <h2>Welcome back</h2>
           <p>Log in to your {appName} account</p>
         </div>
