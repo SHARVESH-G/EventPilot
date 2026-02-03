@@ -1,14 +1,26 @@
-// RegisterPage.jsx
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./registerPageStyles.css";
 import { CircleDot } from "lucide-react";
 import { statusOptinos } from "../../datas/loginFormData";
 import { PrimaryButton } from "../../components/uis/button/buttons";
+import axios from "../../utils/axios";
 
-const RegisterPage=()=>{
+const RegisterPage = () => {
   const appName = import.meta.env.VITE_APP_NAME;
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    age: "",
+    status: "Student",
+    organisationName: "",
+  });
+
+  const password = formData.password;
 
   const rules = {
     length: password.length >= 8,
@@ -16,6 +28,38 @@ const RegisterPage=()=>{
     lower: /[a-z]/.test(password),
     number: /[0-9]/.test(password),
     special: /[^A-Za-z0-9]/.test(password),
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      return alert("Passwords do not match");
+    }
+
+    try {
+      const { data } = await axios.post("/api/auth/register", {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+        age: Number(formData.age),
+        status: formData.status,
+        organisationName: formData.organisationName,
+      });
+
+      alert(data.message);
+      navigate("/login");
+
+    } catch (error) {
+      alert(error.response?.data?.message || "Registration failed");
+    }
   };
 
   return (
@@ -27,27 +71,42 @@ const RegisterPage=()=>{
           <p>Join {appName}</p>
         </div>
 
-        <form className="register-form">
+        <form className="register-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="input-group">
               <label>Name</label>
-              <input type="text" placeholder="Your name" />
+              <input
+                name="name"
+                type="text"
+                placeholder="Your name"
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <div className="input-group">
               <label>Email</label>
-              <input type="email" placeholder="you@example.com" />
+              <input
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                onChange={handleChange}
+                required
+              />
             </div>
           </div>
 
           <div className="input-group">
             <label>Password</label>
             <input
+              name="password"
               type="password"
               placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              onChange={handleChange}
+              required
             />
+
             <div className="password-hints">
               <span className={rules.length ? "valid" : ""}>8+ characters</span>
               <span className={rules.upper ? "valid" : ""}>Uppercase</span>
@@ -62,19 +121,31 @@ const RegisterPage=()=>{
           <div className="form-row">
             <div className="input-group">
               <label>Confirm Password</label>
-              <input type="password" placeholder="••••••••" />
+              <input
+                name="confirmPassword"
+                type="password"
+                placeholder="••••••••"
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <div className="input-group">
               <label>Age</label>
-              <input type="number" placeholder="18" />
+              <input
+                name="age"
+                type="number"
+                placeholder="18"
+                onChange={handleChange}
+                required
+              />
             </div>
           </div>
 
           <div className="form-row">
             <div className="input-group">
               <label>Status</label>
-              <select>
+              <select name="status" onChange={handleChange}>
                 {statusOptinos.map((option) => (
                   <option key={option._id} value={option.label}>
                     {option.label}
@@ -86,8 +157,10 @@ const RegisterPage=()=>{
             <div className="input-group">
               <label>Organisation Name</label>
               <input
+                name="organisationName"
                 type="text"
                 placeholder="School / Company / College"
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -104,5 +177,6 @@ const RegisterPage=()=>{
       </div>
     </div>
   );
-}
+};
+
 export default RegisterPage;
