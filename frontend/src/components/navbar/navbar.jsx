@@ -1,8 +1,10 @@
 
 import { useState } from "react";
-import { Menu , X } from 'lucide-react';
-
+import { CircleDot, Menu , X } from 'lucide-react';
+import {Link} from 'react-router-dom'
 import "./navbar.css";
+import { MutedButton, PrimaryButton } from "../uis/button/buttons";
+import { NavBarLinks } from "../../datas/uiData";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -12,19 +14,19 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-left">
-        <span className="logo-dot"></span>
-        <span className="logo-text">{appName}</span>
+        <CircleDot style={{ color: "var(--primary)" , strokeWidth: 3}}/>
+        <Link to="/" style={{textDecoration:"none"}}><span className="logo-text">{appName}</span></Link>
       </div>
 
       <div className={`nav-center ${open ? "open" : ""}`}>
-        <a href="#">Discover</a>
-        <a href="#">Categories</a>
-        <a href="#">Organizers</a>
+        {NavBarLinks.map((ele) => (
+          <Link key={ele._id} to={`/${ele.to}`} className="nav-link">{ele.name}</Link>
+        ))}
       </div>
 
       <div className="nav-right">
-        <a href="#" className="login">Log in</a>
-        <button className="signup">Sign Up</button>
+        <Link to="/login"><MutedButton text="Login"/></Link>
+        <Link to="/signup"><PrimaryButton text="Sign Up"/></Link>
 
         <button
           className="hamburger"
