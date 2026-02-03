@@ -13,7 +13,6 @@ const Home = () => {
       <ExploreCategory/>
       <TrendingEvents/>
       <HowItWorks />
-      <Footer/>
     </div>
   );
 };
