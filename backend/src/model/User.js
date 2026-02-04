@@ -28,6 +28,12 @@ const userSchema = new mongoose.Schema(
       min: 13,
     },
 
+    balance:{
+      type:Number,
+      required:false,
+      default:1000,
+    },
+
     status: {
       type: String,
       enum: ["Student", "College", "Working" , "Other"],

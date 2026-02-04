@@ -1,3 +1,4 @@
+// App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
@@ -10,25 +11,57 @@ import CreateMyEvent from "./pages/createMyEvent/createMyEvent";
 import RegisteredEventPage from "./pages/registeredEvent/registeredEventPage";
 import UserCreatedEventCardPage from "./pages/userCreatedEvent/userCreatedEventPage";
 import EventDetailsPage from "./pages/eventDetailPage/eventDetailPage";
+import ProtectedRoute from "./utils/protectedRoute";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<RegisterPage />} />
-        <Route path="/aboutus" element={<AboutUs/>} />
-        <Route path="/createnewevent" element={<CreateMyEvent/>}/>
-        <Route path="/registeredevents" element={<RegisteredEventPage/>}/>
-        <Route path="/myevents" element={<UserCreatedEventCardPage/>}/>
-        <Route path="/event/:id" element={<EventDetailsPage />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+
+        <Route
+          path="/createnewevent"
+          element={
+            <ProtectedRoute>
+              <CreateMyEvent />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/registeredevents"
+          element={
+            <ProtectedRoute>
+              <RegisteredEventPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/myevents"
+          element={
+            <ProtectedRoute>
+              <UserCreatedEventCardPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/event/:id"
+          element={
+            <ProtectedRoute>
+              <EventDetailsPage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 };
 
 export default App;
-``
