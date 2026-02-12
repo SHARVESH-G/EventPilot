@@ -5,6 +5,7 @@ import { CircleDot } from "lucide-react";
 import { statusOptinos } from "../../datas/loginFormData";
 import { PrimaryButton } from "../../components/uis/button/buttons";
 import axios from "../../utils/axios";
+import {saveItem } from "../../utils/localStorageMethods";
 
 const RegisterPage = () => {
   const appName = import.meta.env.VITE_APP_NAME;
@@ -53,9 +54,9 @@ const RegisterPage = () => {
         status: formData.status,
         organisationName: formData.organisationName,
       });
-
+      saveItem("Email",data.user.email)
       alert(data.message);
-      navigate("/login");
+      navigate("/");
 
     } catch (error) {
       alert(error.response?.data?.message || "Registration failed");

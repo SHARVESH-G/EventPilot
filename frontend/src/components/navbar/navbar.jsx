@@ -5,11 +5,18 @@ import {Link} from 'react-router-dom'
 import "./navbar.css";
 import { MutedButton, PrimaryButton } from "../uis/button/buttons";
 import { NavBarLinks } from "../../datas/uiData";
+import { useEffect } from "react";
+import { retrieveItem } from "../../utils/localStorageMethods";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
-
   const appName = import.meta.env.VITE_APP_NAME
+  const [isLogin , setIsLogin] = useState(false);
+
+  useEffect(()=>{
+    const user = retrieveItem("Email");
+    setIsLogin(user ? true:false)
+  },[])
 
   return (
     <nav className="navbar">

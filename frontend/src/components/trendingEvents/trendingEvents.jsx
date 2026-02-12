@@ -36,7 +36,7 @@ const TrendingEvents = () => {
 
       <div className="events-grid">
         {filteredEvents.map((event) => (
-          <EventCard key={event._id} event={event} />
+          <EventCard key={event.id} event={event} />
         ))}
       </div>
     </section>
