@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectToDB from "./config/dataBase.js";
 import router from "./routes/authRoutes.js";
+import userRouter from "./routes/userRoutes.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ server.use(express.json());
 const PORT = process.env.PORT;
 
 server.use("/api/auth" , router)
+server.use("/api/user",userRouter)
 
 server.listen(PORT, () => {
   connectToDB()

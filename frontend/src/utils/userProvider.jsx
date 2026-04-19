@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import axiosInstance from "../utils/axiosInstance";
+import axios from "./axios";
 import { saveItem, retrieveItem, deleteItem } from "../utils/localStorageMethods";
 
 const UserContext = createContext();
@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
 
   const fetchUser = async (email) => {
     try {
-      const { data } = await axiosInstance.get(`/api/auth/user/${email}`);
+      const { data } = await axios.get(`/api/auth/user/${email}`);
       setUser(data.user);
     } catch (err) {
       console.log("User fetch failed", err);
